@@ -1,0 +1,242 @@
+/* StyleMagasin1.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #212121;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.confirm-btn, .cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background-color: #c0392b;
+}
+
+.cancel-btn {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #7f8c8d;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    padding-top: 25px;
+    text-align: center;
+    color: #fff;
+    margin: 30px 0;
+}
+
+.empty-history {
+    text-align: center;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.commande-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.commande-header {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.commande-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.commande-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.statut {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #e9ecef;
+}
+
+.statut.confirmée {
+    background: #28a745;
+    color: white;
+}
+
+.produits-list {
+    padding: 20px;
+}
+
+.produit-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.produit-item:last-child {
+    border-bottom: none;
+}
+
+.produit-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.produit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.produit-details {
+    flex: 1;
+}
+
+.produit-details h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.produit-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.produit-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.produit-info span {
+    font-weight: 600;
+    color: #333;
+}
+
+.commande-footer {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.total {
+    text-align: right;
+    font-size: 1.1em;
+    color: #333;
+    margin: 0;
+}
+
+.total span {
+    font-weight: 600;
+    color: #28a745;
+}
+
+@media (max-width: 768px) {
+    .produit-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .produit-image {
+        margin: 0 0 15px 0;
+    }
+
+    .produit-info {
+        grid-template-columns: 1fr;
+    }
+
+    .commande-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

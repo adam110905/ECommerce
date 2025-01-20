@@ -1,0 +1,359 @@
+/* StyleMagasin1.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    background: #212121;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 80px auto 20px auto;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.empty-cart {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin: 20px 0;
+}
+
+.cart-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+    background: #f9f9f9;
+}
+
+.item-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-details h3 {
+    color: #333;
+    font-size: 1.4em;
+}
+
+.item-details p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.price {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.quantity-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-form input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.subtotal {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.btn-remove {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-remove:hover {
+    background: #c0392b;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    text-align: right;
+    display: flex;  /* Ajout */
+    justify-content: flex-end;  /* Ajout */
+    align-items: center;  /* Ajout */
+    gap: 15px;  /* Ajout */
+}
+
+.total {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-right: auto;  /* Ajout */
+}
+
+.btn-continue,
+.btn-checkout {
+    display: inline-block;
+    padding: 12px 25px;  /* Modifié */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;  /* Ajout */
+    font-weight: 500;  /* Ajout */
+    cursor: pointer;  /* Ajout */
+}
+
+.btn-continue {
+    background: #3498db;
+    color: white;
+}
+
+.btn-continue:hover {
+    background: #2980b9;
+    transform: translateY(-2px);  /* Ajout */
+}
+
+.btn-checkout {
+    background: #3498db;  /* Modifié pour matcher */
+    color: white;
+}
+
+
+.btn-checkout:hover {
+    background: #2980b9;  /* Modifié pour matcher */
+    transform: translateY(-2px);  /* Ajout */
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .item-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .item-details {
+        align-items: center;
+    }
+
+    .quantity-form {
+        justify-content: center;
+    }
+
+    .cart-summary {
+        flex-wrap: wrap;  /* Modifié */
+    }
+
+    .btn-continue,
+    .btn-checkout {
+        flex: 1;  /* Modifié */
+        min-width: 150px;  /* Ajout */
+        text-align: center;
+    }
+
+    .total {
+        width: 100%;  /* Modifié */
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cart-item {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Style pour les messages de succès/erreur */
+.message {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Hover effects */
+.item-image {
+    transition: transform 0.3s ease;
+}
+
+.item-image:hover {
+    transform: scale(1.05);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.confirm-btn, 
+.cancel-btn {
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.confirm-btn {
+    background: #3498db;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.cancel-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Animation pour le modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.3s ease;
+}

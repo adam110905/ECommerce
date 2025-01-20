@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+
+/* === Navbar === */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px; 
+    background-color:rgba(20, 20, 20, 0.7);; /* Fond blanc avec une transparence de 20% */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+    width: 100%; 
+    position: fixed;
+    top: 0; 
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Ajoute un effet de flou au fond */
+}
+
+
+.logo-container {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px; /* Taille du texte du logo */
+    font-weight: bold;
+    gap: 15px; /* Espace entre l'image et le texte */
+    padding: 10px 20px; /* Espace cliquable */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce */
+    border-radius: 4px; /* Coins arrondis */
+}
+
+.logo-image {
+    width: 40px; /* Taille de l'image */
+    height: 40px;
+    object-fit: cover; /* Assure que l'image reste bien cadrée */
+    border-radius: 50%; /* Donne une forme circulaire à l'image */
+}
+
+.logo:hover,
+.logo.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Fond au survol */
+    color: #fff; /* Couleur du texte inchangée */
+}
+
+nav {
+    flex: 1; /* Utilise tout l'espace disponible */
+}
+
+nav ul {
+    display: flex; /* Disposition en ligne des éléments de menu */
+    list-style: none; /* Pas de puces */
+    align-items: center; /* Alignement vertical des éléments */
+    justify-content: flex-end; /* Aligner à droite */
+    padding: 15px;
+}
+
+nav ul li {
+    margin-left: 20px; /* Espacement entre les éléments de menu */
+}
+
+nav ul li a {
+    color: #fff; /* Texte blanc pour une meilleure lisibilité */
+    text-decoration: none;
+    padding: 10px 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color:  rgba(255, 255, 255, 0.1); /* Même couleur de fond que le logo */
+    color: #fff; /* Même couleur de texte que le logo */
+    border-radius: 4px; /* Coins arrondis identiques */
+}
+
+/* Hamburger menu pour les écrans plus petits */
+.hamburger {
+    display: none; /* Cacher par défaut */
+    cursor: pointer; /* Changer le curseur au survol */
+    background-color: rgba(20, 20, 20, 0.7);
+}
+
+.hamburger div {
+    width: 30px; /* Largeur des barres */
+    height: 3px; /* Hauteur des barres */
+    background: #212526; /* Couleur noire pour les barres du menu hamburger */
+    margin: 5px 0; /* Espace entre les barres */
+    transition: 0.3s; /* Transition pour l'animation */
+}
+
+/* Style du dropdown */
+/* Container du menu déroulant */
+.dropdown {
+    position: relative;
+}
+
+/* Lien pour l'email, qui servira de déclencheur pour afficher/cacher le menu */
+.email-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s ease; /* Animation de changement de couleur */
+}
+
+.email-link:hover {
+    color: #fff; /* Changer la couleur du texte au survol */
+}
+
+/* Menu déroulant */
+.dropdown-menu {
+    display: none; /* Par défaut, le menu est masqué */
+    position: absolute;
+    top: 55px; /* Décalage du menu par rapport à l'élément déclencheur */
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    list-style-type: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 200px;
+    border-radius: 4px;
+    text-align: left;
+    opacity: 0; /* Menu invisible au départ */
+    transform: translateY(-10px); /* Positionnement initial du menu */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition pour l'animation */
+}
+
+/* Lorsque la classe "show" est ajoutée, on affiche le menu */
+.dropdown-menu.show {
+    display: block;
+    opacity: 1; /* Menu visible */
+    transform: translateY(0); /* Menu à sa position d'origine */
+}
+
+/* Styles pour les éléments du menu */
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color:rgba(255, 255, 255, 0.1);/* Changer le fond au survol */
+    color: #fff; /* Changer la couleur du texte au survol */
+}
+
+/* Animation de l'élément */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media only screen and (max-width: 728px) {
+    .logo{
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    .hamburger{
+        display: block; /* Afficher le menu hamburger */
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    header nav {
+        position: absolute; /* Positionnement absolu pour le menu */
+        width: 100%; /* Prendre toute la largeur */
+        left: -150%; /* Déplacer en dehors de l'écran */
+        top: 65px; /* Positionner sous la navbar */
+        background-color: rgba(20, 20, 20, 0.7);
+        padding: 30px; /* Remplissage */
+        transition: 0.3s; /* Transition pour l'animation */
+        z-index: 999; /* Superposition au-dessus des autres éléments */
+    }
+
+    #nav_check:checked ~ nav {
+        left: 0; /* Afficher le menu lorsque checkbox est cochée */
+    }
+
+    nav ul {
+        display: block; /* Afficher les éléments de menu en bloc */
+        text-align: center; /* Centrer les éléments de menu */
+    }
+
+    nav ul li {
+        margin: 20px 0; /* Espacement vertical */
+    }
+
+    #hero {
+        background-size: cover; /* Assure que l'image couvre tout le fond, même sur petits écrans */ 
+        background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        height: 100vh; /* Ajuste la hauteur pour couvrir tout l'écran */
+        background-position: right 10% top;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+}
+
+.modal-overlay1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content1 {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content1 h2 {
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.modal-content1 button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.confirm-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
